@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Alex Curran">
+        <title>Objects</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    <body>
+        <h1 class="main-heading"><span class="fa-book-icon"><i class="fas fa-book-reader fa-lg"></i></span>My <span class="book-text">Books</span></h1>
+        <form>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div class="form-group">
+                <label for="num-pages">Number of Pages:</label>
+                <input type="text" id="num-pages" name="num-pages">
+            </div>
+            <div class="form-group">
+                <label for="read">Read Already?</label>
+                <input type="checkbox" id="read" name="read">
+            </div>
+            <button type="submit">Add Book</button>
+        </form>
+        
+        <table class="display-books">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Number of Pages</th>
+                    <th>Read</th>
+                </tr>
+            </thead>
+            <tbody id="book-list">
+
+            </tbody>
+        </table>
+
+        <script src="script.js"></script>
+    </body>
+</html>
