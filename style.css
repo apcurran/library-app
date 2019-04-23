@@ -57,6 +57,11 @@ input:focus {
     border-color: #000;
 }
 
+input[type="checkbox"],
+label[for="read"] {
+    cursor: pointer;
+}
+
 button {
     display: block;
     margin: 1.3em auto 0 auto;
@@ -77,10 +82,24 @@ button:hover {
 }
 
 table {
-    width: 960px;
+    width: 60%;
     margin: 0 auto;
     margin-top: 2em;
     padding: 0.5em;
     border-top: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1em;
+}
+
+.display-books thead tr > th {
+    text-align: left;
+}
+
+#book-list tr:nth-child(odd) {
+    background-color: #ddd;
 }

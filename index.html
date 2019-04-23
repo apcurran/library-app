@@ -11,7 +11,7 @@
     </head>
     <body>
         <h1 class="main-heading"><span class="fa-book-icon"><i class="fas fa-book-reader fa-lg"></i></span>My <span class="book-text">Books</span></h1>
-        <form>
+        <form id="add-book">
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title">
@@ -25,10 +25,10 @@
                 <input type="text" id="num-pages" name="num-pages">
             </div>
             <div class="form-group">
-                <label for="read">Read Already?</label>
+                <label for="read">Finished the Book?</label>
                 <input type="checkbox" id="read" name="read">
             </div>
-            <button type="submit">Add Book</button>
+            <button id="add-btn" type="submit">Add Book</button>
         </form>
         
         <table class="display-books">
@@ -37,7 +37,7 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Number of Pages</th>
-                    <th>Read</th>
+                    <th>Finished</th>
                 </tr>
             </thead>
             <tbody id="book-list">
