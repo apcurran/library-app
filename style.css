@@ -7,7 +7,7 @@
 
 .main-heading {
     text-align: center;
-    margin: 2em 0 1em 0;
+    margin: 1em 0 1em 0;
     font-size: 3rem;
 }
 
@@ -63,7 +63,7 @@ label[for="read"] {
     cursor: pointer;
 }
 
-button {
+#add-btn {
     display: block;
     margin: 1.3em auto 0 auto;
     font-size: 1.1rem;
@@ -78,7 +78,7 @@ button {
     transition: opacity 150ms ease-in-out;
 }
 
-button:hover {
+#add-btn:hover {
     opacity: 1;
 }
 
@@ -86,6 +86,7 @@ table {
     width: 60%;
     margin: 0 auto;
     margin-top: 2em;
+    margin-bottom: 4em;
     padding: 0.5em;
     border-top: 1px solid #bbb;
     border-bottom: 1px solid #bbb;

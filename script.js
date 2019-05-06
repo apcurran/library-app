@@ -10,42 +10,62 @@ function Book(title, author, numPages, read) {
     } 
 }
 
-// Example books 1 & 2 for testing
-
-/* const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, "no");
-const book2 = new Book("Harry Potter", "J.K. Rowling", 316, "yes");
- */
-
-//myLibrary.push(book1);
-//myLibrary.push(book2);
 const addForm = document.forms["add-book"];
 addForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const currentTitle = addForm.querySelector("#title").value;
-    const currentAuthor = addForm.querySelector("#author").value;
-    const totalPages = addForm.querySelector("#num-pages").value;
-    const finished = addForm.querySelector("#read").value;
+    let currentTitle = addForm.querySelector("#title").value;
+    let currentAuthor = addForm.querySelector("#author").value;
+    let totalPages = addForm.querySelector("#num-pages").value;
+    let finished = addForm.querySelector("#read").value;
 
     // Create a new book with current value.
     const newBook = new Book(currentTitle, currentAuthor, totalPages, finished);
     addBookToLibrary(newBook);
     render();
+
+/*     // Clear inputs
+    currentTitle = "Test";
+    console.log(currentTitle);
+    currentAuthor = "";
+    totalPages = ""; */
 })
 
-function addBookToLibrary(book) { // Problem with multiple additions of books is HERE!!! With submit and click!
+function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+const bookTable = document.getElementById("book-list");
+
 function render() {
-    let bookTable = document.getElementById("book-list");
     bookTable.innerHTML = "";
-    myLibrary.forEach(book => { // Possible problem with loop here, not needed.
+    myLibrary.forEach((book, index) => {
         const row = document.createElement("tr");
+        row.setAttribute("class", index);
         row.innerHTML = `
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.numPages}</td>
-            <td>${book.read}</td>`;
+            <td>${book.read}</td>
+            <td><span class="delete">delete</span></td>`;
         bookTable.appendChild(row); 
     });
 }
+
+// Delete button for rows
+bookTable.addEventListener("click", (event) => {
+    let currentElClass = event.target.parentElement.parentElement.className;
+    if(event.target.className === "delete") {
+        myLibrary.splice(currentElClass, 1);
+        render();
+    }
+});
+
+// Invoke render function to show example books at the start
+
+const example1 = new Book("A Tale of Two Cities", "Charles Dickens", 489, "yes");
+const example2 = new Book("The Picture of Dorian Gray", "Oscar Wilde", 367, "yes");
+
+addBookToLibrary(example1);
+addBookToLibrary(example2);
+
+render();
