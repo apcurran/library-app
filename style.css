@@ -43,19 +43,21 @@ label {
 input {
     margin-left: 0.5em;
     width: 450px;
+    background-color: #fff;
     font: 1.5em sans-serif;
     border: 1px solid #999;
 
 }
 
-#read {
-    display: inline-block;
-    width: 0.65em;
+input:focus {
+    border-color: #000;
 }
 
-input:focus {
-    background-color: rgba(128, 191, 255, 0.5);
-    border-color: #000;
+#read {
+    display: inline-block;
+    width: 8em;
+    margin-left: 0.7em;
+    font-size: 1rem;
 }
 
 input[type="checkbox"],
@@ -75,10 +77,37 @@ label[for="read"] {
     opacity: 0.7;
     color: #fff;
     cursor: pointer;
-    transition: opacity 150ms ease-in-out;
+    transition: opacity 140ms ease-in-out;
 }
 
 #add-btn:hover {
+    opacity: 1;
+}
+
+.read-status, .delete {
+    padding: 0.8em 1.1em;
+    font-size: 1rem;
+    border-radius: 0.4em;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 140ms ease-in-out;
+}
+
+.read-status {
+    background-color: #db6906;
+    color: #fff;
+    border: 1px solid #db6906;
+}
+
+/* Delete Button Styling */
+.delete {
+    background: #c60d0d;
+    color: #fff;
+    border: 1px solid #c60d0d;
+}
+
+.read-status:hover, .delete:hover {
     opacity: 1;
 }
 

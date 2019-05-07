@@ -45,11 +45,21 @@ function render() {
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.numPages}</td>
-            <td>${book.read}</td>
-            <td><span class="delete">delete</span></td>`;
-        bookTable.appendChild(row); 
+            <td><button class="read-status">${book.read}</button></td>
+            <td><button class="delete">delete</button></td>`;
+        bookTable.appendChild(row);
     });
 }
+
+// Toggle read status
+bookTable.addEventListener("click", (event) => {
+    let currentEl = event.target;
+    if(currentEl.className === "read-status" && currentEl.textContent === "Read") {
+        currentEl.textContent = "Not Read";
+    } else if(currentEl.className === "read-status") {
+        currentEl.textContent = "Read";
+    }
+});
 
 // Delete button for rows
 bookTable.addEventListener("click", (event) => {
@@ -62,8 +72,8 @@ bookTable.addEventListener("click", (event) => {
 
 // Invoke render function to show example books at the start
 
-const example1 = new Book("A Tale of Two Cities", "Charles Dickens", 489, "yes");
-const example2 = new Book("The Picture of Dorian Gray", "Oscar Wilde", 367, "yes");
+const example1 = new Book("A Tale of Two Cities", "Charles Dickens", 489, "Read");
+const example2 = new Book("The Picture of Dorian Gray", "Oscar Wilde", 367, "Read");
 
 addBookToLibrary(example1);
 addBookToLibrary(example2);
