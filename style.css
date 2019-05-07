@@ -90,7 +90,7 @@ label[for="read"] {
     border-radius: 0.4em;
     text-transform: uppercase;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.78;
     transition: opacity 140ms ease-in-out;
 }
 

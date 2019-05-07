@@ -22,12 +22,6 @@ addForm.addEventListener("submit", (event) => {
     const newBook = new Book(currentTitle, currentAuthor, totalPages, finished);
     addBookToLibrary(newBook);
     render();
-
-/*     // Clear inputs
-    currentTitle = "Test";
-    console.log(currentTitle);
-    currentAuthor = "";
-    totalPages = ""; */
 })
 
 function addBookToLibrary(book) {
