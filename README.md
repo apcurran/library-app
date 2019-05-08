@@ -1,5 +1,5 @@
 # library-app
-Creating a book list program using JavaScript objects and some basic OOP
+Creating a book list program using JavaScript objects
 
 Features:
 
