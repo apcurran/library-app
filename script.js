@@ -1,4 +1,4 @@
-let myLibrary = [];
+let myLibrary = JSON.parse(localStorage.getItem("myLibrary")) || [];
 
 function Book(title, author, numPages, read) {
     this.title = title;
@@ -21,6 +21,7 @@ addForm.addEventListener("submit", (event) => {
     // Create a new book with current value.
     const newBook = new Book(currentTitle, currentAuthor, totalPages, finished);
     addBookToLibrary(newBook);
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
     render();
 })
 
@@ -66,10 +67,10 @@ bookTable.addEventListener("click", (event) => {
 
 // Invoke render function to show example books at the start
 
-const example1 = new Book("A Tale of Two Cities", "Charles Dickens", 489, "Read");
+/* const example1 = new Book("A Tale of Two Cities", "Charles Dickens", 489, "Read");
 const example2 = new Book("The Picture of Dorian Gray", "Oscar Wilde", 367, "Read");
 
 addBookToLibrary(example1);
-addBookToLibrary(example2);
+addBookToLibrary(example2); */
 
 render();
