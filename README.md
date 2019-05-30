@@ -13,4 +13,6 @@ Features:
 
 -Mobile-friendly layout
 
+-Uses local storage for persistence
+
 This project was fun and challenging! I felt it was a great opportunity to practice DOM manipulation, creation of elements, conditionals, loops, objects, and many other fundamental JavaScript principles!
