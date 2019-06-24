@@ -1,13 +1,18 @@
 let myLibrary = JSON.parse(localStorage.getItem("myLibrary")) || [];
 
-function Book(title, author, numPages, read) {
-    this.title = title;
-    this.author = author;
-    this.numPages = numPages;
-    this.read = read;
-    this.tellInfo = function() {
+function BookFactory(title, author, numPages, read) {
+
+    function tellInfo() {
         return (`${title} by ${author}, ${numPages} pages, ${read}.`)
-    } 
+    }
+    
+    return {
+        title,
+        author,
+        numPages,
+        read,
+        tellInfo
+    }
 }
 
 const addForm = document.forms["add-book"];
@@ -19,7 +24,7 @@ addForm.addEventListener("submit", (event) => {
     let finished = addForm.querySelector("#read").value;
 
     // Create a new book with current value.
-    const newBook = new Book(currentTitle, currentAuthor, totalPages, finished);
+    const newBook = BookFactory(currentTitle, currentAuthor, totalPages, finished);
     addBookToLibrary(newBook);
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
     render();
@@ -61,16 +66,18 @@ bookTable.addEventListener("click", (event) => {
     let currentElClass = event.target.parentElement.parentElement.className;
     if(event.target.className === "delete") {
         myLibrary.splice(currentElClass, 1);
+        localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+        myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
         render();
     }
 });
 
 // Invoke render function to show example books at the start
 
-/* const example1 = new Book("A Tale of Two Cities", "Charles Dickens", 489, "Read");
-const example2 = new Book("The Picture of Dorian Gray", "Oscar Wilde", 367, "Read");
+// const example1 = new Book("A Tale of Two Cities", "Charles Dickens", 489, "Read");
+// const example2 = new Book("The Picture of Dorian Gray", "Oscar Wilde", 367, "Read");
 
-addBookToLibrary(example1);
-addBookToLibrary(example2); */
+// addBookToLibrary(example1);
+// addBookToLibrary(example2);
 
 render();
