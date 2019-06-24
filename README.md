@@ -3,7 +3,7 @@ Creating a book list program using JavaScript objects
 
 Project [link](https://apcurran.github.io/library-app/)
 
-##Features:
+## Features:
 
 - Add any book (includes inputs for title, author, number of pages, and finished/unfinished).
 
