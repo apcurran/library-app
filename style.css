@@ -23,7 +23,7 @@
 
 form {
     margin: 0 auto;
-    width: 650px;
+    max-width: 650px;
     padding: 1em;
     border: 1px solid #ccc;
     border-radius: 1em;
@@ -42,7 +42,7 @@ label {
 
 input {
     margin-left: 0.5em;
-    width: 450px;
+    max-width: 450px;
     background-color: #fff;
     font: 1.5em sans-serif;
     border: 1px solid #999;
@@ -55,7 +55,7 @@ input:focus {
 
 #read {
     display: inline-block;
-    width: 8em;
+    max-width: 8em;
     margin-left: 0.7em;
     font-size: 1rem;
 }
@@ -112,7 +112,7 @@ label[for="read"] {
 }
 
 table {
-    width: 60%;
+    max-width: 90%;
     margin: 0 auto;
     margin-top: 2em;
     margin-bottom: 4em;
@@ -123,7 +123,8 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     padding: 1em;
 }
 
@@ -133,4 +134,17 @@ th, td {
 
 #book-list tr:nth-child(odd) {
     background-color: #ddd;
+}
+
+@media screen and (max-width: 35em) {  
+    tr td,
+    .read-status,
+    .delete {
+        font-size: .75rem;
+    }
+
+    th,
+    td {
+        padding: .5em;
+    }
 }
